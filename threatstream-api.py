@@ -11,15 +11,10 @@ import sys
 
 apiuser='user'
 apikey='API_KEY'
-query_api_url='https://api.threatstream.com'
-
+query_api_url='https://api.threatstream.com/api/v1/'
 
 def query_api(apiuser,apikey,resource,flags):
-    url = query_api_url+resource+'/'+apiuser+apikey+flags
-    print 'Query URL:'
-    print ''
-    print url
-    print ''
+    url = query_api_url+resource+'/'+'?username='+apiuser+'&api_key='+apikey+flags
     http_req = urllib2.Request(url, headers={'ACCEPT': 'application/json, text/html'})
     try:
         resp = urllib2.urlopen(http_req)
@@ -36,7 +31,6 @@ def query_api(apiuser,apikey,resource,flags):
        sys.exit()
        
 
-
 def api_decode(api_data):
     if api_data != None:
         # Cleanup non-ascii
@@ -49,11 +43,9 @@ def fetch_intel(apiuser,apikey):
    print 'Downloading intelligence: \n'
    CORE = { 'c2_domain','bot_ip'}
    for itype in CORE:
-       rows = []
        c = query_api(apiuser,apikey,'intelligence','&limit=0&format=json&itype=%s' % (itype))
        data = api_decode(c)
        for i in data:
-           print i
 
 
 if __name__ == '__main__':
