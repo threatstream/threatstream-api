@@ -54,3 +54,7 @@ def fetch_intel(apiuser,apikey):
        data = api_decode(c)
        for i in data:
            print i
+
+
+
+fetch_intel(apiuser,apikey)
