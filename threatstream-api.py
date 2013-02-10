@@ -56,5 +56,5 @@ def fetch_intel(apiuser,apikey):
            print i
 
 
-
-fetch_intel(apiuser,apikey)
+if __name__ == '__main__':
+    fetch_intel(apiuser,apikey)
