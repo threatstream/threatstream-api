@@ -46,6 +46,7 @@ def fetch_intel(apiuser,apikey):
        c = query_api(apiuser,apikey,'intelligence','&limit=0&format=json&itype=%s' % (itype))
        data = api_decode(c)
        for i in data:
+           print i
 
 
 if __name__ == '__main__':
