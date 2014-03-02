@@ -1,6 +1,6 @@
 # threatstreap-api.py
 #
-# Copyright (C) 2013 THREAT STREAM, Inc.
+# Copyright (C) 2014 THREAT STREAM, Inc.
 # This file is subject to the terms and conditions of the GNU General Public
 # License version 2.  See the file COPYING in the main directory for more
 # details.
@@ -41,8 +41,8 @@ def api_decode(api_data):
 
 def fetch_intel(apiuser,apikey):
    print 'Downloading intelligence: \n'
-   CORE = { 'c2_domain','bot_ip'}
-   for itype in CORE:
+   INTEL = { 'c2_domain','bot_ip'}
+   for itype in INTEL:
        c = query_api(apiuser,apikey,'intelligence','&limit=0&format=json&itype=%s' % (itype))
        data = api_decode(c)
        for i in data:
