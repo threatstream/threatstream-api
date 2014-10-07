@@ -4,10 +4,12 @@ threatstream-api
 threatstream-api python code
 
    ENTERPRISE and GOVERNMENT access available to customers.
+   
 
 LICENSE
 -------
-go-bulk-dns-resolver
+
+threatstream-api
 
 Copyright (C) 2014 - ThreatStream
 
