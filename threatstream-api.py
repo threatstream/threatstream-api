@@ -1,4 +1,4 @@
-# threatstreap-api.py
+# threatstream-api.py
 #
 # Copyright (C) 2014 THREAT STREAM, Inc.
 # This file is subject to the terms and conditions of the GNU General Public
@@ -15,7 +15,7 @@ apiuser = 'TS_Username' # Or Specify on the commandline
 apikey = 'TS_APIKey' # Or Specify on the commandline
 query_api_url = 'https://api.threatstream.com/api/v2'
 
-#log.basicConfig(format='%(message)s', level=log.INFO)
+log.basicConfig(format='%(message)s', level=log.INFO)
 
 
 def query_api(apiuser,apikey,resource,flags):
@@ -56,7 +56,7 @@ def format_output(jsonblob):
 
 if __name__ == '__main__':
   if len(argv) < 2:
-    log.info('Usage: {} [query] {username} {apikey}'.format(__file__))
+    log.info('Usage: {} [query] [username] [apikey]'.format(__file__))
     exit(0)
   if len(argv) == 4:
     apiuser = argv[2]
